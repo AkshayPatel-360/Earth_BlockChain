@@ -1,10 +1,18 @@
 const SHA256 = require('crypto-js/sha256');
 
+class Transaction{
+  constructor(fromAddress, toAddress, amount){
+    this.fromAddress = fromAddress;
+    this.toAddress= toAddress;
+    this.amount= amount;
+  }
+}
+
 class Block {
-  constructor(index, timestamp, data, previousHash = '') {
-    this.index = index;
+  constructor(timestamp, transactions, previousHash = '') {
+   
     this.timestamp = timestamp;
-    this.data = data;
+    this.transactions= transactions;
     this.previousHash = previousHash;
     this.hash = this.calculateHash();
     this.nonce = 0;
@@ -54,10 +62,6 @@ class Blockchain {
 }
 
 let earthCoin = new Blockchain();
-
-console.log('Mining block 1...')
-earthCoin.addBlock(new Block(1, "20/10/2022", { amount: 4 }));
-
 
 
 
