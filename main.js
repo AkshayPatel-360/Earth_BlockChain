@@ -58,7 +58,6 @@ let earthCoin = new Blockchain();
 console.log('Mining block 1...')
 earthCoin.addBlock(new Block(1, "20/10/2022", { amount: 4 }));
 
-console.log('Mining block 2...')
-earthCoin.addBlock(new Block(2, "22/10/2022", { amount: 440 }));
+
 
 
